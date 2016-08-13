@@ -7,7 +7,7 @@
 (defentity users
   (pk :id)
   (table :users)
-  (entity-fields :name :email))
+  (entity-fields :email))
 
 (defentity auth-tokens
   (pk :id)

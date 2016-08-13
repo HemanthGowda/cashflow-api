@@ -8,10 +8,10 @@ CREATE OR REPLACE FUNCTION update_updated_at_column()
 
 CREATE TABLE users (
     id          serial PRIMARY KEY,
-    name        varchar(40) NOT NULL CHECK (name <> ''),
     email       varchar(60) NOT NULL UNIQUE,
     created_at  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+    updated_at  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    password_digest VARCHAR(162) NOT NULL
 );
 CREATE TRIGGER update_updated_at_users
     BEFORE UPDATE ON users FOR EACH ROW EXECUTE
