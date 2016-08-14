@@ -9,6 +9,7 @@ CREATE OR REPLACE FUNCTION update_updated_at_column()
 CREATE TABLE users (
     id          serial PRIMARY KEY,
     email       varchar(60) NOT NULL UNIQUE,
+    name       varchar(60) NOT NULL,
     created_at  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     password_digest VARCHAR(162) NOT NULL
